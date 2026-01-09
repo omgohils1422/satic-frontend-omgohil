@@ -19,3 +19,21 @@ links.forEach(link => {
     document.body.style.overflow = "auto";
   });
 });
+
+// SEARCH BAR LOGIC
+const searchForm = document.getElementById("searchForm");
+const searchInput = document.getElementById("searchInput");
+
+searchForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const value = searchInput.value.trim();
+
+  if (value === "") {
+    alert("Please enter a search term");
+    searchInput.focus();
+    return;
+  }
+
+  alert("Searching for: " + value);
+});

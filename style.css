@@ -97,3 +97,40 @@
     display: flex;
   }
 }
+
+/* SEARCH BAR */
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.search-bar input {
+  padding: 8px 10px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+/* Focus State */
+.search-bar input:focus {
+  outline: 2px solid #38bdf8;
+}
+
+/* Search Button */
+.search-bar button {
+  padding: 8px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #38bdf8;
+}
+
+/* Mobile adjustment */
+@media (max-width: 768px) {
+  .search-bar {
+    display: none;
+  }
+}
+
