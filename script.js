@@ -1,5 +1,7 @@
+// Change primary button text
 document.querySelector(".primary-btn").innerText = "Send";
 
+// MOBILE NAVIGATION
 const hamburger = document.getElementById("hamburger");
 const navLinks = document.getElementById("navLinks");
 const links = navLinks.querySelectorAll("a");
@@ -37,3 +39,7 @@ searchForm.addEventListener("submit", (e) => {
 
   alert("Searching for: " + value);
 });
+
+if (window.innerWidth <= 768) {
+  searchForm.style.display = "none";
+}
