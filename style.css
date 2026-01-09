@@ -4,8 +4,10 @@
   box-sizing: border-box;
   font-family: Arial, sans-serif;
 }
+
+/* MAIN CONTENT */
 #id1 {
-    margin: 20px;
+  margin: 20px;
 }
 
 /* NAVBAR */
@@ -68,15 +70,56 @@
   cursor: pointer;
 }
 
+/* SEARCH BAR */
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.search-bar input {
+  padding: 8px 10px;
+  border-radius: 4px;
+  border: none;
+  font-size: 14px;
+}
+
+/* Input Focus */
+.search-bar input:focus {
+  outline: 2px solid #38bdf8;
+}
+
+/* Search Button */
+.search-bar button {
+  padding: 8px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #38bdf8;
+  color: #0f172a;
+}
+
+/* Button Focus (Keyboard Accessibility) */
+.search-bar button:focus {
+  outline: 2px solid #ffffff;
+}
+
+/* Hover Effect */
+.search-bar button:hover {
+  background-color: #0ea5e9;
+}
+
+/* VISUALLY HIDDEN (Accessibility) */
+.visually-hidden {
+  position: absolute;
+  left: -10000px;
+}
+
 /* ===== MOBILE VIEW ===== */
 @media (max-width: 768px) {
 
   .hamburger {
     display: block;
-  }
-
-  .desktop-btn {
-    display: none;
   }
 
   .nav-links {
@@ -96,41 +139,9 @@
   .nav-links.show {
     display: flex;
   }
-}
 
-/* SEARCH BAR */
-.search-bar {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.search-bar input {
-  padding: 8px 10px;
-  border-radius: 4px;
-  border: none;
-  outline: none;
-  font-size: 14px;
-}
-
-/* Focus State */
-.search-bar input:focus {
-  outline: 2px solid #38bdf8;
-}
-
-/* Search Button */
-.search-bar button {
-  padding: 8px 10px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  background-color: #38bdf8;
-}
-
-/* Mobile adjustment */
-@media (max-width: 0px) {
+  /* Hide search bar on mobile (optional) */
   .search-bar {
     display: none;
   }
 }
-
