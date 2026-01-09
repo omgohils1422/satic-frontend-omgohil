@@ -128,7 +128,7 @@
 }
 
 /* Mobile adjustment */
-@media (max-width: 100px) {
+@media (max-width: 0px) {
   .search-bar {
     display: none;
   }
