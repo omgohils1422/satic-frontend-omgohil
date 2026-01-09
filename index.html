@@ -13,12 +13,20 @@
     <!-- Logo -->
     <div class="logo">SATIC</div>
 
-    <!-- Search Bar -->
-  <form class="search-bar" id="searchForm">
-    <input type="text" id="searchInput" placeholder="Search..." aria-label="Search" />
-    <button type="submit" aria-label="Search button">🔍</button>
-  </form>
-
+      <!-- Search Bar -->
+    <form class="search-bar" id="searchForm" role="search">
+      <label for="searchInput" class="visually-hidden">Search</label>
+      <input 
+        type="text" 
+        id="searchInput" 
+        placeholder="Search..." 
+        aria-label="Search"
+      />
+      <button type="submit" aria-label="Search button">
+        🔍
+      </button>
+    </form>
+    
     <!-- Hamburger Icon -->
     <div class="hamburger" id="hamburger"> ☰ </div>
 
