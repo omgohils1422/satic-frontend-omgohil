@@ -8,76 +8,77 @@
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <div class="logo">SATIC</div>
+  <!-- Header/Navbar -->
+  <header class="navbar" role="banner">
+    <div class="logo" aria-label="SATIC logo">SATIC</div>
 
     <!-- Search Bar (Desktop) -->
-    <form class="search-bar" id="searchForm">
-      <input type="text" id="searchInput" placeholder="Search..." />
-      <button type="submit">🔍</button>
+    <form class="search-bar" id="searchForm" role="search">
+      <input type="text" id="searchInput" placeholder="Search..." aria-label="Search input" />
+      <button type="submit" aria-label="Submit search">🔍</button>
     </form>
 
-    <!-- Hamburger -->
-    <button class="hamburger" id="hamburger">☰</button>
+    <!-- Hamburger Menu Button -->
+    <button class="hamburger" id="hamburger" aria-expanded="false" aria-label="Toggle navigation menu">☰</button>
 
-    <!-- Navigation -->
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#" class="active">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Services</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </nav>
+    <!-- Navigation Links -->
+    <nav>
+      <ul class="nav-links" id="navLinks" role="navigation">
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <!-- MAIN CONTENT -->
-  <main id="id1">
-    <h1>Frontend Internship</h1><br>
-    <h2>Reusable Card Component</h2><br>
-    <h3>This website is deployed using GitHub Pages.</h3><br>
-    <p>Name: <strong>Om Gohil</strong></p><br>
+  <!-- Main Content -->
+  <main id="id1" role="main">
+    <h1>Frontend Internship</h1>
+    <h2>Reusable Card Component</h2>
+    <h3>This website is deployed using GitHub Pages.</h3>
+    <p>Name: <strong>Om Gohil</strong></p>
 
     <button class="primary-btn">Send</button>
     <button class="primary-btn" disabled>Disabled</button>
   </main>
 
-  <!-- CARD SECTION -->
-  <section class="cards-section">
-    <h2 class="section-title">Our Services</h2><br>
+  <!-- Cards Section -->
+  <section class="cards-section" role="region" aria-labelledby="services-title">
+    <h2 id="services-title" class="section-title">Our Services</h2>
 
     <div class="cards-grid">
 
-      <!-- CARD -->
-      <div class="card">
-        <img src="https://media.licdn.com/dms/image/v2/D5612AQE8CnLA3JYugQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1721169884883?e=2147483647&v=beta&t=xbqKctcyC6Ewq7tAfl2sDZBChDtiZpOValLkP_n_4PQ" alt="Service 1">
+      <!-- Card 1 -->
+      <article class="card">
+        <img src="https://media.licdn.com/dms/image/v2/D5612AQE8CnLA3JYugQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1721169884883?e=2147483647&v=beta&t=xbqKctcyC6Ewq7tAfl2sDZBChDtiZpOValLkP_n_4PQ" alt="Illustration of web development tools and code">
         <div class="card-body">
           <h3>Web Development</h3>
-          <p>Build modern, fast, and responsive websites using frontend technologies.</p><br>
+          <p>Build modern, fast, and responsive websites using frontend technologies.</p>
           <button class="card-btn">Learn More</button>
         </div>
-      </div>
-      <br>
+      </article>
 
-      <!-- CARD -->
-      <div class="card">
-        <img src="https://cdn.prod.website-files.com/678a08d17a6b88bae4e2d8ee/67931d5b243855793b667970_66b0929089fba41bd4d24265_A-pathway-that-UIUX-team-follows-before-designing-your-app.png" alt="Service 2">
+      <!-- Card 2 -->
+      <article class="card">
+        <img src="https://cdn.prod.website-files.com/678a08d17a6b88bae4e2d8ee/67931d5b243855793b667970_66b0929089fba41bd4d24265_A-pathway-that-UIUX-team-follows-before-designing-your-app.png" alt="Diagram showing UI/UX design process">
         <div class="card-body">
           <h3>UI / UX Design</h3>
           <p>Create clean and intuitive user interfaces with great user experience.</p>
           <button class="card-btn">Learn More</button>
         </div>
-      </div>
-        <br>
-      <!-- CARD -->
-      <div class="card">
-        <img src="https://lnsel.com/wp-content/uploads/2014/07/Responsive-Web-Design.jpg" alt="Service 3">
+      </article>
+
+      <!-- Card 3 -->
+      <article class="card">
+        <img src="https://lnsel.com/wp-content/uploads/2014/07/Responsive-Web-Design.jpg" alt="Example of responsive web design on multiple devices">
         <div class="card-body">
           <h3>Responsive Layouts</h3>
           <p>Layouts that work perfectly on desktop, tablet, and mobile devices.</p>
           <button class="card-btn">Learn More</button>
         </div>
-      </div>
-        <br>
+      </article>
+
     </div>
   </section>
 
