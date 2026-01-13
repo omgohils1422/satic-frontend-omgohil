@@ -8,7 +8,6 @@ hamburger.addEventListener("click", () => {
     navLinks.classList.contains("show") ? "hidden" : "auto";
 });
 
-// CLOSE ON LINK CLICK
 navLinks.querySelectorAll("a").forEach(link => {
   link.addEventListener("click", () => {
     navLinks.classList.remove("show");
@@ -16,18 +15,23 @@ navLinks.querySelectorAll("a").forEach(link => {
   });
 });
 
-// SEARCH BAR
-const searchForm = document.getElementById("searchForm");
-const searchInput = document.getElementById("searchInput");
+// 🔔 NOTIFICATION LOGIC
+const notification = document.getElementById("notification");
+const notificationText = document.getElementById("notificationText");
+const closeNotification = document.getElementById("closeNotification");
 
-searchForm.addEventListener("submit", e => {
-  e.preventDefault();
-  const value = searchInput.value.trim();
+function showSuccess() {
+  notification.className = "notification success";
+  notificationText.textContent = "✅ Action completed successfully!";
+  notification.style.display = "flex";
+}
 
-  if (!value) {
-    alert("Please enter a search term");
-    return;
-  }
+function showError() {
+  notification.className = "notification error";
+  notificationText.textContent = "❌ Something went wrong. Try again.";
+  notification.style.display = "flex";
+}
 
-  alert("Searching for: " + value);
+closeNotification.addEventListener("click", () => {
+  notification.style.display = "none";
 });
