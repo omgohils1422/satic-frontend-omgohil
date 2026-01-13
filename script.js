@@ -1,4 +1,4 @@
-// MOBILE NAV
+// MOBILE NAV VIWE
 const hamburger = document.getElementById("hamburger");
 const navLinks = document.getElementById("navLinks");
 
