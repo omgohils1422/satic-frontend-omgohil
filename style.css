@@ -193,8 +193,9 @@ body {
     display: block;
   }
 
-  .search-bar {
-    display: none;
+  /* Removed: .search-bar { display: none; } to show search on mobile */
+  .search-bar input {
+    width: 120px; /* Smaller input on mobile to fit better */
   }
 
   .nav-links {
@@ -212,5 +213,17 @@ body {
 
   .nav-links.show {
     display: flex;
+  }
+}
+
+/* Extra small screens (e.g., phones in portrait) */
+@media (max-width: 480px) {
+  .search-bar {
+    flex-direction: column; /* Stack search input and button vertically */
+    gap: 4px;
+  }
+
+  .search-bar input {
+    width: 100%; /* Full width on very small screens */
   }
 }
