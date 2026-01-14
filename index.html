@@ -13,6 +13,7 @@
     <span id="notificationText">Success message</span>
     <button class="close-btn" id="closeNotification">×</button>
   </div>
+   
 
   <!-- NAVBAR -->
   <header class="navbar">
@@ -44,6 +45,30 @@
       <button class="error-btn" onclick="showError()">Show Error</button>
     </div>
   </main>
+   <!-- BASIC FORM -->
+<section class="form-section">
+  <h2>Basic Form Submission</h2>
+
+  <form id="basicForm" class="basic-form">
+    
+    <div class="form-group">
+      <label for="username">Your Name</label>
+      <input
+        type="text"
+        id="username"
+        placeholder="Enter your name"
+      />
+      <small class="error-text" id="nameError">
+        Name is required
+      </small>
+    </div>
+
+    <button type="submit" id="submitBtn" disabled>
+      Submit
+    </button>
+
+  </form>
+</section>
 
   <!-- CARD SECTION -->
   <section class="cards-section">
