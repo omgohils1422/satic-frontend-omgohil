@@ -58,3 +58,40 @@ function showError() {
 closeNotification.addEventListener("click", () => {
   notification.style.display = "none";
 });
+
+// BASIC FORM LOGIC
+const basicForm = document.getElementById("basicForm");
+const usernameInput = document.getElementById("username");
+const submitBtn = document.getElementById("submitBtn");
+const nameError = document.getElementById("nameError");
+
+// Enable/disable button on input
+usernameInput.addEventListener("input", () => {
+  if (usernameInput.value.trim() === "") {
+    submitBtn.disabled = true;
+    usernameInput.classList.add("error");
+    nameError.style.display = "block";
+  } else {
+    submitBtn.disabled = false;
+    usernameInput.classList.remove("error");
+    nameError.style.display = "none";
+  }
+});
+
+// Prevent empty submission
+basicForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  if (usernameInput.value.trim() === "") {
+    usernameInput.classList.add("error");
+    nameError.style.display = "block";
+    return;
+  }
+
+  // Show success notification
+  showSuccess();
+
+  // Reset form
+  basicForm.reset();
+  submitBtn.disabled = true;
+});
