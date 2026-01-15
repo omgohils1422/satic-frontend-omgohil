@@ -1,97 +1,63 @@
-// MOBILE NAV
+// NAV
 const hamburger = document.getElementById("hamburger");
 const navLinks = document.getElementById("navLinks");
 
 hamburger.addEventListener("click", () => {
   navLinks.classList.toggle("show");
-  document.body.style.overflow =
-    navLinks.classList.contains("show") ? "hidden" : "auto";
 });
 
-navLinks.querySelectorAll("a").forEach(link => {
-  link.addEventListener("click", () => {
-    navLinks.classList.remove("show");
-    document.body.style.overflow = "auto";
-  });
-});
-
-// SEARCH BAR FUNCTIONALITY
+// SEARCH
 const searchForm = document.getElementById("searchForm");
 const searchInput = document.getElementById("searchInput");
 
-searchForm.addEventListener("submit", (e) => {
-  e.preventDefault(); // Prevent page reload
-  const query = searchInput.value.trim();
-  if (query) {
-    alert(`Searching for: "${query}"`); // Demo: Replace with real search logic
-    searchInput.value = ""; // Clear input
-  } else {
-    alert("Please enter a search term.");
+searchForm.addEventListener("submit", e => {
+  e.preventDefault();
+  if (!searchInput.value.trim()) {
+    alert("Enter search term");
+    return;
   }
+  alert(`Searching for ${searchInput.value}`);
+  searchInput.value = "";
 });
 
-// 🔔 NOTIFICATION LOGIC
+// NOTIFICATION
 const notification = document.getElementById("notification");
 const notificationText = document.getElementById("notificationText");
 const closeNotification = document.getElementById("closeNotification");
 
 function showSuccess() {
   notification.className = "notification success";
-  notificationText.textContent = "✅ Action completed successfully!";
+  notificationText.textContent = "✅ Success!";
   notification.style.display = "flex";
-  // Auto-hide after 3 seconds
-  setTimeout(() => {
-    notification.style.display = "none";
-  }, 3000);
+  setTimeout(() => notification.style.display = "none", 3000);
 }
 
 function showError() {
   notification.className = "notification error";
-  notificationText.textContent = "❌ Something went wrong. Try again.";
+  notificationText.textContent = "❌ Error!";
   notification.style.display = "flex";
-  // Auto-hide after 3 seconds
-  setTimeout(() => {
-    notification.style.display = "none";
-  }, 3000);
+  setTimeout(() => notification.style.display = "none", 3000);
 }
 
-closeNotification.addEventListener("click", () => {
-  notification.style.display = "none";
-});
+closeNotification.onclick = () => notification.style.display = "none";
 
-// BASIC FORM LOGIC
-const basicForm = document.getElementById("basicForm");
-const usernameInput = document.getElementById("username");
+// FORM
+const form = document.getElementById("basicForm");
+const username = document.getElementById("username");
 const submitBtn = document.getElementById("submitBtn");
-const nameError = document.getElementById("nameError");
+const error = document.getElementById("nameError");
 
-// Enable/disable button on input
-usernameInput.addEventListener("input", () => {
-  if (usernameInput.value.trim() === "") {
-    submitBtn.disabled = true;
-    usernameInput.classList.add("error");
-    nameError.style.display = "block";
-  } else {
-    submitBtn.disabled = false;
-    usernameInput.classList.remove("error");
-    nameError.style.display = "none";
-  }
+username.addEventListener("input", () => {
+  const valid = username.value.trim() !== "";
+  submitBtn.disabled = !valid;
+  error.style.display = valid ? "none" : "block";
+  username.classList.toggle("error", !valid);
 });
 
-// Prevent empty submission
-basicForm.addEventListener("submit", (e) => {
+form.addEventListener("submit", e => {
   e.preventDefault();
-
-  if (usernameInput.value.trim() === "") {
-    usernameInput.classList.add("error");
-    nameError.style.display = "block";
-    return;
-  }
-
-  // Show success notification
+  if (!username.value.trim()) return;
   showSuccess();
-
-  // Reset form
-  basicForm.reset();
+  form.reset();
   submitBtn.disabled = true;
 });
