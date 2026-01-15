@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Frontend Internship | Notification Banner</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Frontend Internship Project</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
 
-  <!-- 🔔 NOTIFICATION BANNER (NO LAYOUT SHIFT) -->
+<body class="page-wrapper">
+
+  <!-- 🔔 Notification -->
   <div class="notification success" id="notification">
-    <span id="notificationText">Success message</span>
+    <span id="notificationText"></span>
     <button class="close-btn" id="closeNotification">×</button>
   </div>
-   
 
   <!-- NAVBAR -->
   <header class="navbar">
@@ -34,77 +34,105 @@
     </ul>
   </header>
 
-  <!-- MAIN CONTENT -->
-  <main class="content">
-    <h1>Frontend Internship</h1>
-    <h2>Notification Banner Component</h2>
-    <p>Name: <strong>Om Gohil</strong></p>
+  <!-- PAGE CONTENT -->
+  <div class="page-content">
 
-    <div class="demo-buttons">
-      <button class="primary-btn" onclick="showSuccess()">Show Success</button>
-      <button class="error-btn" onclick="showError()">Show Error</button>
-    </div>
-  </main>
-   <!-- BASIC FORM -->
-<section class="form-section">
-  <h2>Basic Form Submission</h2>
+    <main class="content">
+      <h1>Frontend Internship</h1>
+      <p>Name: <strong>Om Gohil</strong></p>
 
-  <form id="basicForm" class="basic-form">
-    
-    <div class="form-group">
-      <label for="username">Your Name</label>
-      <input
-        type="text"
-        id="username"
-        placeholder="Enter your name"
-      />
-      <small class="error-text" id="nameError">
-        Name is required
-      </small>
-    </div>
+      <!-- FORM -->
+      <section class="form-section">
+        <h2>Basic Form Submission</h2>
 
-    <button type="submit" id="submitBtn" disabled>
-      Submit
-    </button>
+        <form id="basicForm" class="basic-form">
+          <div class="form-group">
+            <label for="username">Your Name</label>
+            <input type="text" id="username" placeholder="Enter your name" />
+            <small class="error-text" id="nameError">Name is required</small>
+          </div>
 
-  </form>
-</section>
+          <button type="submit" id="submitBtn" disabled>Submit</button>
+        </form>
+      </section>
 
-  <!-- CARD SECTION -->
-  <section class="cards-section">
-    <h2 class="section-title">Our Services</h2>
+      <!-- DEMO BUTTONS -->
+      <div class="demo-buttons">
+        <button class="primary-btn" onclick="showSuccess()">Show Success</button>
+        <button class="error-btn" onclick="showError()">Show Error</button>
+      </div>
+    </main>
 
-    <div class="cards-grid">
+    <!-- CARDS -->
+    <section class="cards-section">
+      <h2 class="section-title">Our Services</h2>
 
-      <div class="card">
-        <img src="https://media.licdn.com/dms/image/v2/D5612AQE8CnLA3JYugQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1721169884883?e=2147483647&v=beta&t=xbqKctcyC6Ewq7tAfl2sDZBChDtiZpOValLkP_n_4PQ" alt="Illustration of web development tools and code for Web Development">
-        <div class="card-body">
-          <h3>Web Development</h3>
-          <p>Build modern, responsive websites using frontend technologies.</p>
-          <button class="card-btn">Learn More</button>
+      <div class="cards-grid">
+        <div class="card">
+          <img src="https://lnsel.com/wp-content/uploads/2014/07/Responsive-Web-Design.jpg" alt="">
+          <div class="card-body">
+            <h3>Web Development</h3>
+            <p>Build responsive modern websites.</p>
+            <button class="card-btn">Learn More</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://cdn.prod.website-files.com/678a08d17a6b88bae4e2d8ee/67931d5b243855793b667970_66b0929089fba41bd4d24265_A-pathway-that-UIUX-team-follows-before-designing-your-app.png" alt="">
+          <div class="card-body">
+            <h3>UI / UX Design</h3>
+            <p>Clean and intuitive designs.</p>
+            <button class="card-btn">Learn More</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://media.licdn.com/dms/image/v2/D5612AQE8CnLA3JYugQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1721169884883" alt="">
+          <div class="card-body">
+            <h3>Responsive Layouts</h3>
+            <p>Works on all devices.</p>
+            <button class="card-btn">Learn More</button>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="card">
-        <img src="https://cdn.prod.website-files.com/678a08d17a6b88bae4e2d8ee/67931d5b243855793b667970_66b0929089fba41bd4d24265_A-pathway-that-UIUX-team-follows-before-designing-your-app.png" alt="Diagram showing UI/UX design process">
-        <div class="card-body">
-          <h3>UI / UX Design</h3>
-          <p>Create clean and intuitive user interfaces.</p>
-          <button class="card-btn">Learn More</button>
-        </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+
+      <div class="footer-column">
+        <h3>SATIC</h3>
+        <p>Frontend Internship Project</p>
       </div>
 
-      <div class="card">
-        <img src="https://lnsel.com/wp-content/uploads/2014/07/Responsive-Web-Design.jpg" alt="Example of responsive web design on multiple devices">
-        <div class="card-body">
-          <h3>Responsive Layouts</h3>
-          <p>Layouts that work on all devices.</p>
-          <button class="card-btn">Learn More</button>
-        </div>
+      <div class="footer-column">
+        <h4>Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#">GitHub</a></li>
+          <li><a href="#">Docs</a></li>
+          <li><a href="#">Support</a></li>
+        </ul>
       </div>
 
     </div>
-  </section>
+
+    <div class="footer-bottom">
+      © 2026 Om Gohil. All rights reserved.
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
