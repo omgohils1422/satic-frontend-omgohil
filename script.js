@@ -16,7 +16,7 @@ searchForm.addEventListener("submit", e => {
     alert("Enter search term");
     return;
   }
-  alert(`Searching for ${searchInput.value}`);
+  alert(`Searching for: ${searchInput.value}`);
   searchInput.value = "";
 });
 
@@ -26,31 +26,45 @@ const notificationText = document.getElementById("notificationText");
 const closeNotification = document.getElementById("closeNotification");
 
 function showSuccess() {
-  notification.className = "notification success";
-  notificationText.textContent = "✅ Success!";
+  notification.classList.remove("error");
+  notification.classList.add("success");
+  notificationText.textContent = "✅ Action completed successfully!";
   notification.style.display = "flex";
-  setTimeout(() => notification.style.display = "none", 3000);
+
+  setTimeout(() => {
+    notification.style.display = "none";
+  }, 3000);
 }
 
 function showError() {
-  notification.className = "notification error";
-  notificationText.textContent = "❌ Error!";
+  notification.classList.remove("success");
+  notification.classList.add("error");
+  notificationText.textContent = "❌ Something went wrong!";
   notification.style.display = "flex";
-  setTimeout(() => notification.style.display = "none", 3000);
+
+  setTimeout(() => {
+    notification.style.display = "none";
+  }, 3000);
 }
 
-closeNotification.onclick = () => notification.style.display = "none";
+closeNotification.addEventListener("click", () => {
+  notification.style.display = "none";
+});
+
+// BUTTON DEMO
+document.getElementById("successBtn").onclick = showSuccess;
+document.getElementById("errorBtn").onclick = showError;
 
 // FORM
 const form = document.getElementById("basicForm");
 const username = document.getElementById("username");
 const submitBtn = document.getElementById("submitBtn");
-const error = document.getElementById("nameError");
+const errorText = document.getElementById("nameError");
 
 username.addEventListener("input", () => {
   const valid = username.value.trim() !== "";
   submitBtn.disabled = !valid;
-  error.style.display = valid ? "none" : "block";
+  errorText.style.display = valid ? "none" : "block";
   username.classList.toggle("error", !valid);
 });
 
