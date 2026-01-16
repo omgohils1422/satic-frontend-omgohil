@@ -51,7 +51,6 @@ closeNotification.addEventListener("click", () => {
   notification.style.display = "none";
 });
 
-<<<<<<< HEAD
 // GO-TO-TOP BUTTON
 const goToTopBtn = document.getElementById("goToTopBtn");
 
@@ -85,25 +84,6 @@ username.addEventListener("input", () => {
   username.classList.toggle("error", !valid);
 });
 
-=======
-// BUTTON DEMO
-document.getElementById("successBtn").onclick = showSuccess;
-document.getElementById("errorBtn").onclick = showError;
-
-// FORM
-const form = document.getElementById("basicForm");
-const username = document.getElementById("username");
-const submitBtn = document.getElementById("submitBtn");
-const errorText = document.getElementById("nameError");
-
-username.addEventListener("input", () => {
-  const valid = username.value.trim() !== "";
-  submitBtn.disabled = !valid;
-  errorText.style.display = valid ? "none" : "block";
-  username.classList.toggle("error", !valid);
-});
-
->>>>>>> 2f7d12bf04f8db04a4c393bedff684527befd511
 form.addEventListener("submit", e => {
   e.preventDefault();
   if (!username.value.trim()) return;
